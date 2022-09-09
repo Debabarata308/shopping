@@ -3,13 +3,14 @@
 }
 
 .card {
-    width: 18rem;
-    margin-right: 2rem !important;
-    margin-bottom: 2rem !important;
+    width: 8rem;
+    height: auto;
+    margin-right: 1rem !important;
+    margin-bottom: 1rem !important;
 }
 
 .img {
-    width: 15rem !important;
+    width: 10rem !important;
     height: auto !important;
 }
 

@@ -1,10 +1,10 @@
 import './bodyContent.css';
 import { useState, useEffect } from 'react';
-import { getData, fetchQuantity } from '../redux/actions';
 import { useDispatch } from 'react-redux';
+import { cartActions } from '../redux/cartSlice';
 
 function BodyContent() {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const dispatch = useDispatch();
 
 
@@ -29,18 +29,14 @@ function BodyContent() {
             });
     }
 
-    const handleData = (e) => {
-       return dispatch(getData(e));
-    }
-
     return (
-        <div className="container mt-3">
+        <div className="container-fluid mt-3">
             <div className='row'>
                 <div className='col-xl-3 col-lg-3 col-md-3 col-sm-0 col-xs-0'></div>
                 <div className='col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6'>
                     <form className="d-flex" role="search">
                         <input className="form-control me-2" onChange={(e) => handleFilter(e.target.value)} type="search" placeholder="Search for products..." aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                        {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
                     </form>
                 </div>
                 <div className='col-xl-3 col-lg-3 col-md-3 col-sm-0 col-xs-0'></div>
@@ -68,7 +64,7 @@ function BodyContent() {
                                                         <p className='mt-2 mb-0'>Rs. {e.price}</p>
                                                     </div>
                                                     <div className='col text-right'>
-                                                        <a name="" id="" className="btn btn-primary" onClick={() => handleData(e)} role="button">Add to cart</a>
+                                                        <a name="" id="" className="btn btn-primary" onClick={() => dispatch(cartActions.addToCart(e))} role="button">Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>

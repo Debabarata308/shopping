@@ -4,12 +4,9 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 function Header() {
-    // const [data, setData] = useState(null);
-    // useEffect(() => {
-    //     useSelector((state) => setData(state.data));
-    // }, []);
+    const cartItems = useSelector((state) => state.cart.itemList);
+    console.log(cartItems)
 
-   const data = useSelector((state) => state.data);
     return (
         <div className="Header">
             <nav className="navbar navbar-expand-lg bg-light">
@@ -30,7 +27,7 @@ function Header() {
                             <Link className='navLink' to="cart">
                                 <a className="btn btn-light position-relative">
                                     <span className="position-absolute top-0 start-100 translate-middle p-2 badge rounded-pill text-danger">
-                                        {data ? data.length : 0}
+                                        {cartItems ? cartItems.length : 0}
                                         <span className="visually-hidden">unread messages</span>
                                     </span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-cart3" viewBox="0 0 16 16">
