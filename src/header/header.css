@@ -1,0 +1,7 @@
+.mr-custom{
+    margin-right: 2rem !important;
+}
+.active{
+    text-decoration: none !important;
+    cursor: pointer !important;
+}

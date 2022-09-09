@@ -1,0 +1,24 @@
+.mr-custom {
+    margin-right: 2rem !important;
+}
+
+.card {
+    width: 18rem;
+    margin-right: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.image {
+    width: 5rem !important;
+    height: auto !important;
+}
+
+.alightLeft {
+    text-align: left !important;
+}
+
+.topCenter {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
